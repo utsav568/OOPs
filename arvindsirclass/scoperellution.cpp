@@ -1,9 +1,10 @@
-//scope resolution method
+
 #include <iostream>
 using namespace std;
-int n = 10;
+void sum(int x ,int y){
+    cout<<x<<" "<<y;
+
+}
 int main(){
-    int n=9;
-    cout<<n<<endl;
-    cout<<::n;
+    sum(10,20,30,40);
 }
