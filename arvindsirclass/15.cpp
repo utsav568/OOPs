@@ -1,30 +1,52 @@
 #include <iostream>
 using namespace std;
+
 class Text{
     private:
     int a;
+
     public:
-    void geta(int);
+    void get(int);
+    int show();
 };
+
 class Example{
+    private:
     int b;
+
     public: 
-    void getb(int);
+    void get(int);
+    int show();
 };
-void Text::geta(int b){
+
+void Text::get(int b){
     a=b;
 }
-void Example::getb(int c){
+
+int Text::show(){
+    return a;
+}
+
+void Example::get(int c){
     b=c;
 }
-void Sum(Text a , Example b){
-    
 
+int Example::show(){
+    return b;
 }
+
+void Sum(Text a, Example b){
+    cout << "Sum = " << a.show() + b.show();
+}
+
 int main(){
     Text t;
-    t.geta(10);
+    t.get(10);
+
     Example E;
-    E.getb(20);
-    Sum(10,20);
+    E.get(20);
+
+    Sum(t,E);
+
+   
 }
